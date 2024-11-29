@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
         textTheme: Theme.of(context).textTheme.apply(
             bodyColor: TColor.primaryText, displayColor: TColor.primaryText),
         colorScheme: ColorScheme.fromSeed(seedColor: TColor.primary),
-        useMaterial3: true,
+        useMaterial3: false,
       ),
       home: const SplashView(),
     );

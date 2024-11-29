@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_music/common/color_extension.dart';
+import 'package:flutter_music/view/home/home_view.dart';
 
 class MainTabview extends StatefulWidget {
   const MainTabview({super.key});
@@ -34,14 +35,14 @@ class _MainTabviewState extends State<MainTabview>
     return Scaffold(
       body: TabBarView(
         controller: controller,
-        children: [Container(), Container(), Container()],
+        children: [const HomeView(), Container(), Container()],
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(color: TColor.bg, boxShadow: const [
           BoxShadow(color: Colors.black38, blurRadius: 5, offset: Offset(0, -3))
         ]),
         child: BottomAppBar(
-          color: Colors.transparent,
+          color: TColor.bg,
           child: TabBar(
               controller: controller,
               indicatorColor: Colors.transparent,
