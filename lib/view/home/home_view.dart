@@ -5,6 +5,7 @@ import 'package:flutter_music/common_widget/songs_cell.dart';
 import 'package:flutter_music/common_widget/songs_row.dart';
 import 'package:flutter_music/common_widget/title_section.dart';
 import 'package:flutter_music/common_widget/view_all_section.dart';
+import 'package:flutter_music/view_model/splash_view_model.dart';
 import 'package:get/get.dart';
 import 'package:flutter_music/view_model/home_view_model.dart';
 
@@ -25,7 +26,9 @@ class _HomeViewState extends State<HomeView> {
         backgroundColor: TColor.bg,
         elevation: 0,
         leading: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Get.find<SplashViewModel>().openDrawer();
+            },
             icon: Image.asset(
               'assets/img/menu.png',
               width: 25,
@@ -77,7 +80,7 @@ class _HomeViewState extends State<HomeView> {
                 },
               ),
             ),
-            Divider(
+            const Divider(
               color: Colors.white,
               indent: 20,
               endIndent: 20,
@@ -94,7 +97,7 @@ class _HomeViewState extends State<HomeView> {
                 },
               ),
             ),
-            Divider(
+            const Divider(
               color: Colors.white,
               indent: 20,
               endIndent: 20,
@@ -103,7 +106,7 @@ class _HomeViewState extends State<HomeView> {
             ListView.builder(
                 physics: const NeverScrollableScrollPhysics(),
                 shrinkWrap: true,
-                padding: EdgeInsets.symmetric(horizontal: 10),
+                padding: const EdgeInsets.symmetric(horizontal: 10),
                 itemCount: homeVM.recentlyPlayedArr.length,
                 itemBuilder: (context, index) {
                   var sObj = homeVM.recentlyPlayedArr[index];

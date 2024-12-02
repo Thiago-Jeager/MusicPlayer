@@ -22,6 +22,7 @@ class TColor {
   static List<Color> get secondaryG => [secondaryStart, secondaryEnd];
 
   static Color get bg => const Color(0xff181B2C);
+  static Color get bg03 => const Color.fromARGB(255, 25, 28, 46);
   static Color get darkGray => const Color(0xff383B49);
   static Color get lightGray => const Color(0xffD0D1D4);
 }
