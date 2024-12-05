@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_music/common/color_extension.dart';
+import 'package:flutter_music/common_widget/icon_text.dart';
 import 'package:flutter_music/view/home/home_view.dart';
+import 'package:flutter_music/view/settings/settings_view.dart';
+import 'package:flutter_music/view/songs/songs_view.dart';
 import 'package:flutter_music/view_model/splash_view_model.dart';
 import 'package:get/get.dart';
 
@@ -85,63 +88,39 @@ class _MainTabviewState extends State<MainTabview>
                     ],
                   )),
             ),
-            ListTile(
-              // leading: Image.asset("assets/img/m_theme.png"),
-              leading: Icon(
-                Icons.color_lens_outlined,
-                color: TColor.focus,
-              ),
-              title: Text(
-                "Tema",
-                style: TextStyle(
-                    color: TColor.primaryText80, fontWeight: FontWeight.bold),
-              ),
-              onTap: () {
-                splashVM.closeDrawer();
-              },
-            ),
-            Divider(
-              color: TColor.primaryText80,
-              indent: 70,
-            ),
-            ListTile(
-              // leading: Image.asset("assets/img/m_theme.png"),
-              leading: Icon(
-                Icons.timer_outlined,
-                color: TColor.focus,
-              ),
-              title: Text(
-                "Alarma",
-                style: TextStyle(
-                    color: TColor.primaryText80, fontWeight: FontWeight.bold),
-              ),
-            ),
-            Divider(
-              color: TColor.primaryText80,
-              indent: 70,
-            ),
-            ListTile(
-              // leading: Image.asset("assets/img/m_theme.png"),
-              leading: Icon(
-                Icons.screen_search_desktop_outlined,
-                color: TColor.focus,
-              ),
-              title: Text(
-                "Buscar Canciones",
-                style: TextStyle(
-                    color: TColor.primaryText80, fontWeight: FontWeight.bold),
-              ),
-            ),
-            Divider(
-              color: TColor.primaryText80,
-              indent: 70,
-            ),
+            IconText(
+                title: "Tema",
+                icon: Icon(
+                  Icons.color_lens_outlined,
+                  color: TColor.focus,
+                ),
+                onTap: () {
+                  splashVM.closeDrawer();
+                }),
+            IconText(
+                title: "Alarma",
+                icon: Icon(
+                  Icons.watch_later_outlined,
+                  color: TColor.focus,
+                ),
+                onTap: () {
+                  splashVM.closeDrawer();
+                }),
+            IconText(
+                title: "Buscar Canciones",
+                icon: Icon(
+                  Icons.screen_search_desktop_outlined,
+                  color: TColor.focus,
+                ),
+                onTap: () {
+                  splashVM.closeDrawer();
+                }),
           ],
         ),
       ),
       body: TabBarView(
         controller: controller,
-        children: [const HomeView(), Container(), Container()],
+        children: const [HomeView(), SongsView(), SettingsView()],
       ),
       bottomNavigationBar: Container(
         decoration: BoxDecoration(color: TColor.bg, boxShadow: const [
