@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_music/common/color_extension.dart';
+import 'package:flutter_music/view/songs/albums_view.dart';
 import 'package:flutter_music/view/songs/all_songs_view.dart';
 import 'package:flutter_music/view/songs/playlist_view.dart';
 import 'package:flutter_music/view_model/splash_view_model.dart';
@@ -99,9 +100,7 @@ class _SongsViewState extends State<SongsView>
               child: TabBarView(controller: controller, children: const [
             AllSongsView(),
             PlaylistView(),
-            Center(
-              child: Text("art"),
-            ),
+            AlbumsView(),
             Center(
               child: Text("genre"),
             ),
